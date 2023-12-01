@@ -12,7 +12,7 @@ app.post('/events', (req, res) => {
     events.push(event);
 
     // posts
-    axios.post('http://localhost:4000/events', event);
+    axios.post('http://posts-clusterip-srv:4000/events', event);
     // comments
     axios.post('http://localhost:4001/events', event);
     // query

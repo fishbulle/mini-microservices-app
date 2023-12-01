@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
 const cors = require('cors');
 const axios = require('axios');
-const { log } = require('console');
 
 const app = express();
 app.use(bodyParser.json());
@@ -23,7 +22,7 @@ app.post('/posts', async (req, res) => {
         id, title, text
     };
 
-    await axios.post('http://localhost:4005/events', {
+    await axios.post('http://event-bus-srv:4005/events', {
         type: 'PostCreated',
         data: {
             id, title, text
